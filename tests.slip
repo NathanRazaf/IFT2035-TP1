@@ -1,16 +1,16 @@
-(+ (* (- 4 2) 3) 6)                         ; ↝ 12
+(+ (* (- 4 2) 30) 9)                                                ; ↝ 69
 
-(fob (x) (+ 420 x))                         ; ↝ <fobjet>
+(fob (x) (+ 420 x))                                                 ; ↝ <fobjet>
 
 (let gtYDivZ (fob (x y z) (> x (/ y z))) 
-(gtYDivZ 3 4 2))                            ; ↝ True
+(gtYDivZ 3 4 2))                                                    ; ↝ True
 
 
 (fix (
         ((and cond1 cond2) (if cond1 cond2 false))
         ((or cond1 cond2) (if cond1 true (if cond2 true false)))
     )
-    (and (> 4 3) (or (> 1 2) false))        ; ↝ False
+    (and (> 4 3) (or (> 1 2) false))                                ; ↝ False
 )
 
 
@@ -20,5 +20,5 @@
         ((incr x) (+ x 1)) 
         ((decr x) (- x 1))
     ) 
-    (exec (> 3 2) (incr 3) (decr 3))
-)                                           ; ↝ 4
+    (exec (> 3 2) (incr (incr 3)) (decr (incr 3)))
+)                                                                   ; ↝ 5

@@ -1,3 +1,6 @@
+-- Nathan Razafindrakoto 20254813 
+-- Yasmine Ben Youssef 20237210
+
 -- TP-1  --- Implantation d'une sorte de Lisp          -*- coding: utf-8 -*-
 {-# OPTIONS_GHC -Wall #-}
 --
@@ -332,7 +335,7 @@ eval env (Lsend func params) = -- Apparemment j'ai réussi du premier coup
         Just (Vbuiltin bfn) ->
           let params' = map (eval env) params
           in bfn params' -- Appel de la fonction built-in avec les paramètres
-        _ -> error ("Fonction " ++ f ++ " introuvable")
+        _ -> error ("Fonction " ++ f ++ " indéfinie")
     Lfob vars body -> -- Appel de fonction définie localement
       let params' = map (eval env) params 
           env' = zip vars params' ++ env 
